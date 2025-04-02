@@ -17,6 +17,7 @@ class Wall(pygame.sprite.Sprite):
         self.rect.y = y
         self.causes_damage = causes_damage
 
+    # Damage
     def hit(self):
         if self.causes_damage:
                 return 'DAMAGE'
@@ -54,7 +55,7 @@ class SpecialWall(Wall):
             self.rotation_speed = 2
             self.original_rect = self.rect.copy()
 
-    # For movement
+    # Movement
     def update(self):
         if self.special_type == SpecialType.SLIDING_WALL:
             self.rect.y += self.speed * self.direction
@@ -71,7 +72,7 @@ class SpecialWall(Wall):
             self.rect = self.rotated_image.get_rect(center=self.rect.center)
 
 
-    # Draw method
+    # Draws
     def draw(self, surface):
         if self.special_type == SpecialType.ROTATING_WALL:
             surface.blit(self.rotated_image, self.rect)

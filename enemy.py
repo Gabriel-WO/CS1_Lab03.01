@@ -7,6 +7,7 @@ import random
 import os
 from wall import Wall, SpecialType, SpecialWall
 
+# Stats and image paths
 ENEMY_TYPES = {
     'normal': {
         'speed': 1,
@@ -46,7 +47,7 @@ ENEMY_TYPES = {
     }
 }
 
-
+# Enemy class
 class Enemy(pygame.sprite.Sprite):
     def __init__(self, enemy_type, room_walls, WINDOW_WIDTH, WINDOW_HEIGHT):
         super().__init__()
@@ -63,13 +64,13 @@ class Enemy(pygame.sprite.Sprite):
         self.change_x = random.choice([-1, 1]) * self.stats['speed']
         self.change_y = random.choice([-1, 1]) * self.stats['speed']
 
-        # Create image
+        # Image
         self.images = self.load_directional_images()
         self.current_direction = self.get_initial_direction()
         self.image = self.images[self.current_direction]
         self.rect = self.image.get_rect(x=self.x, y=self.y)
 
-        # Movement parameters
+        # Movement
         self.direction_change_timer = 0
         self.direction_change_interval = random.randint(60, 180)
 
@@ -117,7 +118,7 @@ class Enemy(pygame.sprite.Sprite):
         self.y = WINDOW_HEIGHT // 2
 
 
-    # Movement
+    # Movement and sprite changing
     def move(self, walls):
         self.direction_change_timer += 1
         if self.direction_change_timer >= self.direction_change_interval:

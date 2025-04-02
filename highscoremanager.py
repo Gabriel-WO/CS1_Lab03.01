@@ -5,6 +5,7 @@ __version__ = '04.02.2025'
 import pygame
 import os
 
+# High score management
 class HighscoreManager:
     def __init__(self, filename='highscore.txt'):
         self.filename = os.path.join(os.path.dirname(__file__), filename)

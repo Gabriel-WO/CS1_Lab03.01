@@ -6,6 +6,7 @@ import pygame
 from wall import Wall, SpecialType, SpecialWall
 from soundmanager import SoundManager
 
+# Player class
 class Player(pygame.sprite.Sprite):
 
     # Speed
@@ -27,13 +28,14 @@ class Player(pygame.sprite.Sprite):
         self.rect.x = x
         self.rect.y = y
 
-        # Health
+        # Health and invulnerability
         self.health = 20
         self.invulnerable = False
         self.invulnerable_timer = 0
 
         self.sound_manager = SoundManager()
 
+    # Image and fallback
     def load_image(self, path, size):
         try:
             image = pygame.image.load(path).convert_alpha()
@@ -44,6 +46,7 @@ class Player(pygame.sprite.Sprite):
             fallback.fill((255, 255, 255))
             return fallback
 
+    # Direction and sprite changing
     def change_speed(self, x, y):
         self.change_x += x
         self.change_y += y
@@ -58,6 +61,7 @@ class Player(pygame.sprite.Sprite):
         else:
             self.image = self.images['down']
 
+    # Collisions
     def move(self, walls):
         collision_walls = []
 
@@ -122,8 +126,8 @@ class Player(pygame.sprite.Sprite):
 
             return False
 
+    # Invulnerability
     def update(self):
-        # Invulnerability timer
         if self.invulnerable:
             self.invulnerable_timer -= 1
             if self.invulnerable_timer <= 0:

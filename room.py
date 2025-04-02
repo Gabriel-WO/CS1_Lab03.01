@@ -27,6 +27,7 @@ class Room(object):
         self.wall_list = pygame.sprite.Group()
         self.enemy_sprites = pygame.sprite.Group()
 
+# Room 1
 class Room1(Room): # Pink theme
     def __init__(self):
         super().__init__()
@@ -60,7 +61,7 @@ class Room1(Room): # Pink theme
         rotating_wall = SpecialWall(150, 300, 20, 200, SpecialType.ROTATING_WALL, PINK, True)
         self.wall_list.add(rotating_wall)
 
-
+# Room 2
 class Room2(Room): # Blue theme
     def __init__(self):
         super().__init__()
@@ -94,7 +95,7 @@ class Room2(Room): # Blue theme
         rotating_wall = SpecialWall(580, 360, 20, 200, SpecialType.ROTATING_WALL, BLUE, True)
         self.wall_list.add(rotating_wall)
 
-
+# Room 3
 class Room3(Room): # Green theme
     def __init__(self):
         super().__init__()

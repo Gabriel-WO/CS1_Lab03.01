@@ -4,7 +4,7 @@ __version__ = '04.02.2025'
 
 import pygame
 
-
+# Sound management
 class SoundManager:
     def __init__(self):
         self.collect_sound = self.load_sound('sounds/collect.wav')
@@ -12,6 +12,7 @@ class SoundManager:
         self.volume = 0.5
         self.set_volume(self.volume)
 
+    # Load sounds
     def load_sound(self, path):
         try:
             sound = pygame.mixer.Sound(path)
@@ -20,14 +21,17 @@ class SoundManager:
             print(f"Couldn't load sound: {e}")
             return None
 
+    # Hit sound
     def play_hit(self):
         if self.hit_sound:
             self.hit_sound.play()
 
+    # Collect sound
     def play_collect(self):
         if self.collect_sound:
             self.collect_sound.play()
 
+    # Set volume
     def set_volume(self, volume):
         self.volume = max(0.0, min(1.0, volume))
         if self.hit_sound:
