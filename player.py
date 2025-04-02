@@ -1,3 +1,7 @@
+# Player
+__author__ = 'Gabriel Whangbo-Olvera'
+__version__ = '04.02.2025'
+
 import pygame
 from wall import Wall, SpecialType, SpecialWall
 from soundmanager import SoundManager

@@ -1,3 +1,7 @@
+# Coin collectibles
+__author__ = 'Gabriel Whangbo-Olvera'
+__version__ = '04.02.2025'
+
 import pygame
 import random
 from wall import Wall, SpecialType, SpecialWall

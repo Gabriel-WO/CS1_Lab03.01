@@ -1,3 +1,7 @@
+# Walls
+__author__ = 'Gabriel Whangbo-Olvera'
+__version__ = '04.02.2025'
+
 import pygame
 from enum import Enum
 import math
