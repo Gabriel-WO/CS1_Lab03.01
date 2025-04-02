@@ -14,6 +14,7 @@ from enemy import Enemy, ENEMY_TYPES
 from coin import Coin
 from soundmanager import SoundManager
 
+
 # Set up game
 def reset_game(WINDOW_WIDTH, WINDOW_HEIGHT):
     # Create sprite groups
