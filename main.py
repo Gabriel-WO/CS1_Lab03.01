@@ -21,7 +21,7 @@ def reset_game(WINDOW_WIDTH, WINDOW_HEIGHT):
 
     # Set player
     player = Player(50, 50)
-    player.health = 10
+    player.health = 20
     player.invulnerable = False
     player.invulnerable_timer = 0
     moving_sprites.add(player)
