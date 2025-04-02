@@ -1,6 +1,7 @@
 # Maze Runner
 __author__ = 'Gabriel Whangbo-Olvera'
 __version__ = '04.02.2025'
+# Flint link: https://app.flintk12.com/activity/pygame-debug-le-1fe068/session/28ca2b1c-a9f4-45e8-836a-a5b32456b7ea
 
 import pygame
 import random
